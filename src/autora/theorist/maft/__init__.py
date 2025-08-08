@@ -453,7 +453,7 @@ chunk_theorist = ChunkedPolynomialRegressorSparse(
     include_interactions=True,
     include_logs=True,
     allowed_powers=(0.5, 1.5),
-    lambda_complexity=1e-4,
+    lambda_complexity=1e-3,
     random_state=0,
 )
 
