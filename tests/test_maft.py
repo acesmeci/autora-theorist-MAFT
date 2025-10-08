@@ -58,8 +58,20 @@ def test_feature_library_log_features_safe_for_nonpositive():
 
     lib = FeatureLibrary(include_interactions=False, include_logs=True, allowed_powers=(0.5, 1.5))
     lib.fit(X)
-    F, names = lib.transform(X, degree=1)
+    F, names = lib.transform(X, degree=1)  # linear + logs + small power set
 
+    # 1️⃣ No NaNs or infs from logs/powers on non-positive inputs
     assert np.isfinite(F).all(), "Found non-finite values in feature matrix."
-    assert any(name.startswith("ln(") for name in names), "Expected log features in names."
-    assert any("+0." in name or "+1" in name for name in names), "Expected shifted log names for safety."
+
+    # 2️⃣ There are log features
+    log_names = [n for n in names if n.startswith("ln(")]
+    assert log_names, "Expected log features in names."
+
+    # 3️⃣ At least one log feature uses a positive shift (string contains '+')
+    assert any('+' in n for n in log_names), "Expected at least one shifted log feature name."
+
+    # 4️⃣ Programmatic check: any feature with min <= 0 must have a positive learned shift
+    mins = X.min(axis=0)
+    need_shift = mins <= 0
+    assert np.all(lib.log_shifts_[need_shift] > 0), "Expected positive log shifts for non-positive columns."
+
