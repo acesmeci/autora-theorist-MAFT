@@ -6,7 +6,7 @@ Our theorist (`ChunkedPolynomialRegressorSparse`) is a **piecewise sparse symbol
 
 The algorithm proceeds as follows:
 
-1. **Clustering **  
+1. **Clustering**  
    - If `k > 0`, input space is divided into regions using KMeans (up to `max_chunks`).
    - Each region gets its own sparse local model.
 
