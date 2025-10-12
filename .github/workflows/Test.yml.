@@ -28,3 +28,7 @@ deploy-docs:
         run: pip install mkdocs mkdocs-material
       - name: Deploy Docs
         run: mkdocs gh-deploy --force
+echo "test" >> README.md
+git add README.md
+git commit -m "Trigger workflow test"
+git push origin test-workflow
