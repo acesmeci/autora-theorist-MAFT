@@ -52,9 +52,10 @@ It searches for compact, interpretable equations that describe the experimental 
 
 1. **Candidate generation:**  
    For each degree–chunk combination, the data is optionally partitioned into $k$ chunks ($k = 0$ indicates a global fit).  
-   Within each chunk, polynomial features up to the given degree are generated using:
+   Within each chunk, polynomial features up to the given degree are generated using
+
    $$
-   \{1, x_i, x_i^2, \dots, x_i^d, x_i x_j, \ldots\}.
+   \{\,1,\, x_i,\, x_i^2,\, \dots,\, x_i^d,\, x_i x_j,\, \ldots\,\}.
    $$
 
 2. **Sparse fitting:**  
