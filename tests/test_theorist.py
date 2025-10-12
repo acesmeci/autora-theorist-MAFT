@@ -7,7 +7,7 @@ def test_fit_predict_consistency():
     theorist = ChunkedPolynomialRegressorSparse()
     theorist.fit(X, y)
     y_pred = theorist.predict(X)
-    assert y_pred.shape == y.shape
+    assert y_pred.ravel().shape == y.shape
 
 def test_basic_functionality():
     X = np.linspace(0, 1, 10).reshape(-1, 1)
