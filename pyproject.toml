@@ -2,7 +2,7 @@
 # UPDATE THIS BEFORE PUBLISHING
 name = "maft"
 description = "An equation discovery method"
-authors = [{Team MAFT}]
+authors = [{name = "Team MAFT"}]
 dynamic = ["version"]
 
 readme = "README.md"
