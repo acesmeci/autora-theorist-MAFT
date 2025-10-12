@@ -1,7 +1,7 @@
-from autora.theorist.maft import ExampleRegressor
+from autora.theorist.maft import ChunkedPolynomialRegressorSparse
 
 def test():
-    theorist = ExampleRegressor()
+    theorist = ChunkedPolynomialRegressorSparse()
     assert theorist is not None
 
 

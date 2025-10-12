@@ -2,7 +2,7 @@
 # UPDATE THIS BEFORE PUBLISHING
 name = "maft"
 description = "An equation discovery method"
-authors = [{ name = "Ahmet N. Cesmeci", email = "a.n.cesmeci@gmail.com" }]
+authors = [{Team MAFT}]
 dynamic = ["version"]
 
 readme = "README.md"
@@ -19,7 +19,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "autora-core[dev]",
-    "autora"
+    "autora",
+    "pytest"
 ]
 
 [project.urls]
