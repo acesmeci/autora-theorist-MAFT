@@ -19,7 +19,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "autora-core[dev]",
-    "autora"
+    "autora",
+    "pytest", 
 ]
 
 [project.urls]
